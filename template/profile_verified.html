@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>JChan Reborn | Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/home.css">
+</head>
+<body style="background-color: #eaeaea;">
+	<!-- Navbar -->
+	<nav class="navbar is-transparent" style="position: fixed; top: 0; left: 0; z-index: 9999; width: 100%;">
+		<div class="navbar-brand">
+			<a href="#" class="navbar-item">JChan Reborn</a>
+			<div class="navbar-burger burger" data-target="navbarMain">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<div id="navbarMain" class="navbar-menu">
+			<div class="navbar-end">
+				<div class="navbar-item">
+						<a href="#" class="navbar-item">Home</a>
+						<a href="#" class="navbar-item">Profile</a>
+						<a href="#" class="navbar-item">Friends</a>
+						<a href="#" class="button is-info is-inverted">
+							<span class="icon">
+								<i class="fa fa-user"></i>
+							</span>
+							<span>Thealexmax</span>
+						</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- End of Navbar -->
+	<!-- Main Content -->
+	<section id="mainContent" style="margin-top: 55.5px;">
+		<section id="mainHeroContent" class="hero is-success is-fullheight" style="background-image: url(https://eutourism.org/wp-content/uploads/2017/09/canada10.jpg); background-size: cover; background-repeat: no-repeat;">
+			<div class="hero-body">
+				<div class="container">
+					<img src="http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/avatars/f2/f2b5efddecd522ddd86cad72de43d52ae9f16d79_full.jpg" width="150" style="border-radius: 100%; margin-top: -50px; border: solid white 3px;">
+					<h1 class="title">Thealexmax</h1>
+					<p class="subtitle">JEG Developer and Co-founder</p>
+				</div>
+			</div>
+		</section>
+		<section id="mainHeroContent" class="hero is-light is-medium">
+			<div class="hero-body">
+				<div class="container">
+					<h1 class="title">About Me</h1>
+					<p class="subtitle">Hey, My name is Alex and I'm the main developer of JChan Reborn</p>
+				</div>
+			</div>
+		</section>
+		<section id="mainHeroContent" class="hero is-dark is-medium">
+			<div class="hero-body">
+				<div class="container">
+					<h1 class="title">Projects</h1>
+					<p>JChan Reborn: <span style="color: yellow;">In Devlopement</span></p>
+					<p>JChan Forum: <span style="color: yellow;">In Devlopement</span></p>
+					<p>The Legend of the Heir: <span style="color: blue;">Waiting for designer</span></p>
+					<p>JarEngine: <span style="color: yellow;">In Devlopement</span></p>
+					<p>SnakeEngine: <span style="color: red;">Stopped</span></p>
+					<p>Project-Koralo: <span style="color: red;">Stopped</span></p>
+					<p>TextEngine: <span style="color: red;">Stopped</span></p>
+				</div>
+			</div>
+		</section>
+	</section>
+	<!-- End of Main Content -->
+
+	<!-- Scripts -->
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+		// Get all "navbar-burger" elements
+		var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+		// Check if there are any navbar burgers
+		if ($navbarBurgers.length > 0) {
+		// Add a click event on each of them
+		$navbarBurgers.forEach(function ($el) {
+			$el.addEventListener('click', function () {
+			// Get the target from the "data-target" attribute
+        	var target = $el.dataset.target;
+        	var $target = document.getElementById(target);
+        	// Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        	$el.classList.toggle('is-active');
+        	$target.classList.toggle('is-active');
+        	});
+        });
+		}
+	});
+	</script>
+</body>
+</html>
