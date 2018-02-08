@@ -125,16 +125,29 @@ if(isset($_GET['id'])) {
                             <p class="title is-4">'; echo $pusername; echo '</p>
                             <p class="subtitle is-6">@'; echo $pusername; echo '</p>
                         </div>
-                    </div>
-                    <div class="card-image">
+					</div>';
+					if($posts['post_image'] != "null") {
+						echo '<div class="card-image">
                         <figure class="image is-4by3">
                             <img src="'; echo $posts['post_image']; echo '" alt="">
                         </figure>
-                    </div>
+                    </div>';
+					}
+					echo ' 
                     <div class="content">
-                        '; echo $posts['post_body']; echo '
+						'; 
+						if(strstr($posts['post_body'], '#')) { 
+							$nohastag = strstr($posts['post_body'], '#', true); 
+							$hastag = strstr($posts['post_body'], '#');
+							$hastagsen = explode(" ", $hastag);
+							$afterneedle = str_replace($hastagsen[0], ' ', $hastag);
+							echo $nohastag; echo '<a href="topic.php?topic='.$hastagsen[0].'">'.$hastagsen[0].'</a>'.' '.$afterneedle;
+						} else {
+							echo $posts['post_body'];
+						}
+						echo '
                         <br>
-                        <time datetime="2016-1-1">9:16 PM - 27 Nov 2017</time>
+                        <time datetime="2016-1-1">'; echo $posts['post_date']; echo '</time>
                         <br>
                         <span class="icon">
                             <i class="fa fa-comment"></i>
@@ -150,43 +163,6 @@ if(isset($_GET['id'])) {
             </div>';
                 }
                 ?>
-				<!--<div class="card">
-					<div class="card-content">
-						<div class="media">
-							<div class="media-left">
-								<figure class="image is-48x48">
-									<img src="http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/avatars/f2/f2b5efddecd522ddd86cad72de43d52ae9f16d79_full.jpg" alt="Placeholder image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<p class="title is-4">Thealexmax ✓</p>
-								<p class="subtitle is-6">@thealexmax</p>
-							</div>
-						</div>
-						<div class="card-image">
-							<figure class="image is-4by3">
-								<img src="http://www.som.com/FILE/15282/torontopearsonairport_1575x900_timothyhursley_01jpg.jpg" alt="Placeholder image">
-							</figure>
-						</div>
-						<div class="content">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-							<a href="#">#css</a> <a href="#">#responsive</a>
-							<br>
-							<time datetime="2016-1-1">9:16 PM - 27 Nov 2017</time>
-							<br>
-							<span class="icon">
-								<i class="fa fa-comment"></i>
-							</span>
-							<span class="icon">
-								<i class="fa fa-heart-o"></i>
-							</span>
-							<span class="icon">
-								<i class="fa fa-bookmark-o"></i>
-							</span>
-						</div>
-					</div>
-				</div>-->
 			</div>
 		</div>
 		</section>
